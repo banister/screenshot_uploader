@@ -12,7 +12,7 @@ Written in pure bash. No need for Ruby or anything like that.
 
 ## Use:
 
-* Relies on `inotify-tools`: `sudo apt install inotify-tools`
+* Relies on `inotify-tools` and `jq` (for processing JSON on command line) `sudo apt install inotify-tools jq`
 * First set the `CLIENT_ID` environment var (dropbox API key)
 * Set the `LOG_FILE` env var, logs are stored here
 * Set the `SCREENSHOT_FOLDER` env var, this is the folder watched
