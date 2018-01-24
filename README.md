@@ -15,6 +15,8 @@ Written in pure bash. No need for Ruby or anything like that.
 * Relies on `inotify-tools`: `sudo apt install inotify-tools`
 * First set the `CLIENT_ID` environment var (dropbox API key)
 * Set the `LOG_FILE` env var, logs are stored here
+* Set the `SCREENSHOT_FOLDER` env var, this is the folder watched
+* Alternatively, when invoking `screenshot_uploader.sh` pass the above as commandline arguments. `$1` is `CLIENT_ID`, and so on.
 
 
 ## Features:
@@ -23,4 +25,3 @@ Written in pure bash. No need for Ruby or anything like that.
 * When a new file is added and it's a png then we upload it to dropbox
 * We also display a popup notification (using `notify-send`) with the new dropbox link for the image
 * Tries to add the link to clipboard but this is unreliable on Ubuntu :/
-
