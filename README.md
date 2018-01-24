@@ -2,6 +2,8 @@
 
 auto-uploader to dropbox for screenshots taken in linux/ubuntu
 
+![img](https://www.dropbox.com/s/4mq0jw6i9dsq9nl/Screenshot%20from%202018-01-24%2012-54-57.png?raw=1)
+
 ## Preamble
 
 I wrote this because I couldn't find a good screenshot/autoupload tool for Ubuntu. It was frustrating, so I wrote one myself.
@@ -19,5 +21,6 @@ Written in pure bash. No need for Ruby or anything like that.
 
 * Watches a specified folder for changes
 * When a new file is added and it's a png then we upload it to dropbox
-* We also display a notification with the new dropbox link for the image
+* We also display a popup notification (using `notify-send`) with the new dropbox link for the image
+* Tries to add the link to clipboard but this is unreliable on Ubuntu :/
 
