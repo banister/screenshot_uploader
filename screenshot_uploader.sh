@@ -6,6 +6,9 @@ screenshot_folder=${3:-$SCREENSHOT_FOLDER}
 
 touch $log_file
 
+exec 1>>$log_file
+exec 2>&1
+
 set -x
 
 created_file() {
@@ -32,7 +35,7 @@ create_link() {
 }
 
 dialog() {
-    notify-send "Screenshot saved to dropbox" "$1"
+    notify-send "$1" "$2"
 }
 
 while true; do
@@ -44,10 +47,10 @@ while true; do
         image_url=$(create_link "${screenshot_folder}/${screenshot_file}")
 
         if [ $? -eq 0 ]; then
-            dialog "$image_url"
+            dialog "Screenshot saved to dropbox" "$image_url"
             echo $image_url | sed 's/"//g' | xsel --clipboard --keep
         else
-            dialog "Something went wrong $(tail -5 $log_file)"
+            dialog "Something went wrong" "$(tail -5 $log_file)"
         fi
     fi
 done
