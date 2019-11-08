@@ -27,7 +27,7 @@ if [ ! -f /tmp/screenshot-uploader.pid ]; then
 fi
 ```
 
-NOTE: cannot add a systemd unit as the clipboard code won't work - only way for clipboard to work is to load it in .bashrc
+NOTE: cannot add a systemd unit as the clipboard code won't work - only way for clipboard to work is to load it in `~/.bashrc`
 
 ## Features:
 
