@@ -18,6 +18,14 @@ Written in pure bash. No need for Ruby or anything like that.
 * Set the `SCREENSHOT_FOLDER` env var, this is the folder watched
 * Alternatively, when invoking `screenshot_uploader.sh` pass the above as commandline arguments. `$1` is `CLIENT_ID`, and so on.
 
+## Add to the end of ~/.bashrc
+
+```
+if [ ! -f /tmp/screenshot-uploader.pid ]; then
+    echo "starting screenshot uploader in background"
+    nohup ~/code/bin/screenshot-uploader.sh  > /dev/null 2>&1 &
+fi
+```
 
 ## Features:
 
