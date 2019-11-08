@@ -9,6 +9,8 @@ touch $log_file
 exec 1>>$log_file
 exec 2>&1
 
+echo $$ > /tmp/screenshot-uploader.pid
+
 set -x
 
 created_file() {
